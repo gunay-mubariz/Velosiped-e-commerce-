@@ -1,0 +1,74 @@
+.mountain-velo{
+    background-color: #F8F8F8;
+
+    padding: 20px 100px;
+}
+.mountain-velo h2{
+    text-transform: uppercase;
+    padding-bottom: 20px
+}
+.mountain-bottom{
+    display: flex;
+   
+    gap: 40px;
+}
+.mountain-right{
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+ 
+}
+.mountain-left>img{
+    width: 100%;
+}
+.mountain-left p{
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: pre-line; 
+    max-width: 500px;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #4c4c4c;
+    line-height: 1.5;
+    padding-bottom: 25px;
+    padding-top: 20px;
+}
+.mountain-right-card{
+    width: 280px;
+    height: 210px;
+    background-color: #34312D;
+    border-radius: 10px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.card-top{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 73px;
+}
+.card-top p{
+    color: #fff;
+    font-weight: 500;
+}
+.card-bottom{
+ color: #fff;
+ align-items: center;
+ padding-left: 10px;
+}
+.mountain-right-top, .mountain-right-bottom{
+    display: flex;
+    gap: 8px;
+}
+@media (min-width:370px) and (max-width:768px){
+    .mountain-bottom{
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .mountain-velo{
+        padding: 20px;
+    }
+ 
+}

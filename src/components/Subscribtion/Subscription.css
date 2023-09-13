@@ -1,0 +1,94 @@
+.subscription{
+    background-color: #131313;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    height: max-content;
+    /* padding-bottom: 30px; */
+}
+.left-side{
+    color: #fff;
+    flex-basis: 70%;
+    padding-top: 30px;
+    padding-left: 100px;
+}
+.left-side h2{
+   text-transform: uppercase;
+   font-weight: 500;
+   font-size: 30px;
+   padding-bottom: 20px;
+}
+.subscribe-input{
+    padding: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-right: 16px;
+    width: 412px;
+}
+.form-sec{
+    display: flex;
+}
+.right-side img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+.agree-checkbox{
+    padding-top: 10px;
+}
+.agree-checkbox input{
+    margin-right: 8px;
+    accent-color: #F57520;
+}
+.agree-checkbox label{
+    font-weight: 300;
+}
+.err{
+    color: #f92525;
+}
+button.swal2-confirm.swal2-styled {
+    background-color: #F57520;
+    color: #000;
+    box-shadow: 0 0 0 3px #F57520;
+  }
+  .swal2-popup {
+    border:2px  solid #F57520;
+    color: #000;
+  }
+
+  div:where(.swal2-icon).swal2-success{
+    border-color: #F57520;
+    color: #F57520;
+  }
+  div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{
+    background-color: #F57520;
+  }
+  div:where(.swal2-icon).swal2-success .swal2-success-ring{
+    border-color: #fc8739;
+  }
+
+
+@media (min-width:370px) and (max-width:768px){
+
+    .right-side{
+        display: none;
+    }
+    .left-side{
+        padding-left: 0;
+        padding-bottom: 30px;
+    }
+    .left-side h2{
+        font-size: 20px;
+    }
+   .form-sec{
+    flex-direction: column;
+   }
+   .agree-checkbox label{
+    font-size: 12px;
+}
+.subscribe-input{
+    width: 100%;
+}
+}
+

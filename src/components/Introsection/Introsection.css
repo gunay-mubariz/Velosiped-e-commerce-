@@ -1,0 +1,43 @@
+.introsection{
+    background-image: url(../../assets/images/velomain-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    height: auto;
+    padding-top: 200px;
+    margin-top: -82px;
+    display: flex;
+    padding-bottom: 55px;
+}
+.intro-text{
+    margin-left: 100px;
+}
+
+.intro-text h2{
+    text-transform: uppercase;
+    font-size: 65px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+.intro-text  p{
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: pre-line; 
+    max-width: 550px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+   
+}
+
+@media (min-width:370px) and (max-width:768px){
+    .intro-text h2{
+        font-size: 24px;
+    }
+    .intro-text{
+
+        margin-left: 25px;
+    }
+}

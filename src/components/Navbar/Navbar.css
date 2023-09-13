@@ -1,0 +1,99 @@
+.navbar{
+    
+    display: flex;
+    justify-content:space-evenly;
+    height: 80px;
+    align-items: center;
+}
+.link-item{
+    color: #fff;
+}
+.link-item:hover{
+    color:#d75702;
+}
+.page-links{
+    display: flex;
+    gap: 10px;
+}
+.icon-links , .icon-links-phone{
+    display: flex;
+    gap: 10px;
+}
+.page-links>.link-item{
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.overlay{
+    background-image: linear-gradient(to right top, #d75702, #a73d1d, #752b21, #411d1b, #0d0c0c);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 11;
+    overflow-x: hidden;
+    transition: width 1.2s ease;
+}
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.nav-links .link-item{
+    text-decoration: none;
+    font-size: 24px;
+    color: #000;
+    transition: all 1s ease;
+}
+.nav-links .link-item:hover{
+    color: #d75702;
+    transform: translateX(30px);
+}
+.cross-icon{
+   position: absolute;
+   right: 70px;
+   top: 70px;
+   color: #000;
+   font-size: 38px;
+   cursor: pointer;
+}
+.cross-icon:hover{
+   color: #d75702;
+}
+
+.active{
+    width: 100%;
+    transition: all 1.2 ease;
+}
+.navbar>.burger-menu{
+    display: none;
+}
+.icon-links-phone{
+    display: none;
+
+}
+
+
+
+
+@media (min-width:370px) and (max-width:768px){
+   .icon-links-phone{
+        display: flex;
+        flex-direction: row;
+    }
+    .icon-links, .page-links{
+        display: none;
+    }
+    .navbar{
+         justify-content: space-between;
+         padding-left: 20px;
+         padding-right: 20px;
+    }
+}

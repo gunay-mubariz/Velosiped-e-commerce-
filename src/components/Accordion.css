@@ -1,0 +1,44 @@
+/* src/components/Accordion.css */
+.accordion {
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.open {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .accordion.open .accordion-content {
+    display: block;
+  }
+  input:checked{
+
+    accent-color: #F57520;
+    color: #fff;
+    
+  }
+  input,label{
+    cursor: pointer;
+    margin-bottom: 20px;
+
+  }
+ 

@@ -1,0 +1,14 @@
+.intro-velo{
+    background: url('../../assets/images/velobg.png');
+    background-size: cover;
+    padding: 30px 100px;
+    height: 200px;
+}
+.intro-velo h2{
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-size: 36px;
+    letter-spacing: 1px;
+    font-size: 42px;
+}
