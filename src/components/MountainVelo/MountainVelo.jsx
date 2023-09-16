@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 const MountainVelo = () => {
   const history = useHistory();
   const relocate = () => {
-    history.push("/accessories");
+    history.push("/velos");
   };
 
   return (
@@ -28,11 +28,11 @@ const MountainVelo = () => {
           <div className="mountain-right-top">
 
             <div className="mountain-right-card">
-              <div className="card-top">
-                <div className="card-top-left">
+              <div className="mountain-top">
+                <div className="mountain-top-left">
                   <p>Рама</p>
                 </div>
-                <div className="card-top-right">
+                <div className="mountain-top-right">
                   <img src={Rama} alt="" />
                 </div>
               </div>
@@ -42,9 +42,9 @@ const MountainVelo = () => {
             </div>
 
             <div className="mountain-right-card">
-              <div className="card-top">
-                 <div className="card-top-left"><p>Бортовой <br /> компьютер</p></div>
-                 <div className="card-top-right">
+              <div className="mountain-top">
+                 <div className="mountain-top-left"><p>Бортовой <br /> компьютер</p></div>
+                 <div className="mountain-top-right">
                   <img src={Testing} alt="" />
                 </div>
               </div>
@@ -56,9 +56,9 @@ const MountainVelo = () => {
 
           <div className="mountain-right-bottom">
             <div className="mountain-right-card">
-              <div className="card-top">
-                <div className="card-top-left"> <p>Трансмиссия</p></div>
-                <div className="card-top-right">
+              <div className="mountain-top">
+                <div className="mountain-top-left"> <p>Трансмиссия</p></div>
+                <div className="mountain-top-right">
                   <img src={Transmission} alt="" />
                 </div>
               </div>
@@ -68,9 +68,9 @@ const MountainVelo = () => {
             </div>
 
             <div className="mountain-right-card">
-              <div className="card-top">
-                <div className="card-top-left"> <p>Оборудование</p></div>
-                <div className="card-top-right">
+              <div className="mountain-top">
+                <div className="mountain-top-left"> <p>Оборудование</p></div>
+                <div className="mountain-top-right">
                   <img src={Equipment} alt="" />
                 </div>
               </div>

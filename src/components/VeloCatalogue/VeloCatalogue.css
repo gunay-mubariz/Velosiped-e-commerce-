@@ -1,6 +1,6 @@
 .velo-catalogue {
   /* background-color: red; */
-  padding: 30px 100px;
+  padding: 30px ;
   display: flex;
   justify-content: space-between;
 }
@@ -74,4 +74,14 @@
   }
   input:checked{
     accent-color: black;
+  }
+  .right-velo-catalogue{
+    padding-top: 22px;
+  }
+
+  @media (min-width:370px) and (max-width:768px){
+    .velo-catalogue{
+      flex-direction: column;
+      align-items: center;
+    }
   }

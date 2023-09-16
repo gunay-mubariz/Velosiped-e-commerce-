@@ -8,6 +8,23 @@
 .link-item{
     color: #fff;
 }
+button.link-item{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+.forsearch{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+}
+.forsearch input{
+   border: 2px solid #d75702;
+   padding: 6px;
+   border-radius: 8px;
+   outline: none;
+}
 .link-item:hover{
     color:#d75702;
 }

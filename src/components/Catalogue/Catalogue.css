@@ -85,7 +85,7 @@
     }
     .links{
         grid-template-columns: repeat(12,6vw);
-    grid-template-rows: repeat(12,5vw);
+        grid-template-rows: repeat(12,5vw);
    
     }
     .b{

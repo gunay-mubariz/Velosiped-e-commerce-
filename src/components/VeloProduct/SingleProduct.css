@@ -1,0 +1,38 @@
+.ProductDetail {
+    border-radius: 12px;
+    border: 1px solid #999;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 8px;
+    justify-content: center;
+    width: 400px;
+  }
+  .single-page{
+    padding: 30px 100px;
+  }
+  
+  .ProductDetail .img-container {
+    width: 100%;
+    height: 240px;
+  }
+  .ProductDetail .img-container img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .ProductDetail .name {
+    font-weight: 400;
+    color: #000;
+  }
+  .ProductDetail .price {
+    font-weight: 400;
+    color: #000;
+  }
+  .des {
+    color: #000;
+  }
+  

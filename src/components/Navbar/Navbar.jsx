@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef,useState} from 'react'
 import './Navbar.css'
 import { Link } from "react-router-dom"
 
@@ -31,6 +31,21 @@ const Navbar = () => {
         OverlayMenuRef.current.classList.remove('active')
     }
 }
+function CloseOv(e){
+    const clickedBtn = e.target
+
+    if(clickedBtn.classList.contains('ov')){
+        // console.log('btn klik') ;
+        OverlayMenuRef.current.classList.remove('active')
+    }
+}
+
+const [showSearchInput, setShowSearchInput] = useState(false);
+
+const toggleSearchInput = () => {
+  setShowSearchInput(!showSearchInput);
+};
+
 
   return (
     <>
@@ -38,12 +53,12 @@ const Navbar = () => {
        <RxCross2   className='cross-icon' onClick={CloseOverlayMenu}/>
         
         <div className="nav-links">
-           <Link className="link-item" to="/" >Главная </Link>
-            <Link className="link-item " to="/velos">Велосипеды</Link>
-            <Link className="link-item" to="/accessories">Аксессуары</Link>
-            <Link className="link-item" to="/ekipirovka">Экипировка</Link>
-            <Link className="link-item" to="/spareparts">Запчасти</Link>
-            <Link className="link-item" to="/bikestations">Велостанки</Link>
+           <Link className="link-item ov" to="/" onClick={CloseOv} >Главная </Link>
+            <Link className="link-item ov" to="/velos" onClick={CloseOv}>Велосипеды</Link>
+            <Link className="link-item ov" to="/accessories" onClick={CloseOv}>Аксессуары</Link>
+            <Link className="link-item ov" to="/equipment" onClick={CloseOv}>Экипировка</Link>
+            <Link className="link-item ov" to="/spareparts" onClick={CloseOv}>Запчасти</Link>
+            <Link className="link-item ov" to="/bikestations" onClick={CloseOv}>Велостанки</Link>
            
         </div>
     </div>
@@ -59,23 +74,27 @@ const Navbar = () => {
             <Link className="link-item" to="/" >Главная </Link>
             <Link className="link-item " to="/velos">Велосипеды</Link>
             <Link className="link-item" to="/accessories">Аксессуары</Link>
-            <Link className="link-item">Экипировка</Link>
+            <Link className="link-item" to="/equipment">Экипировка</Link>
             <Link className="link-item" to="/spareparts">Запчасти</Link>
             <Link className="link-item" to="/bikestations">Велостанки</Link>
         </div>
 
-        <div className='icon-links' >
+    <div className='forsearch'>      <div className='icon-links' >
+           <button className="link-item" > <BiSearch onClick={toggleSearchInput} /> </button>  
+           <Link className="link-item" to='/signup' > <AiOutlineUser/> </Link> 
+           <Link className="link-item" > <AiOutlineHeart /> </Link> 
+           <Link className="link-item" to="/cart" > <AiOutlineShoppingCart/> </Link> 
+        </div> 
+        {showSearchInput && (
+        <input type="text" placeholder="Search..." /> 
+      )}
+      </div>
+        <div className='icon-links-phone' >
            <Link className="link-item" > <BiSearch/> </Link> 
            <Link className="link-item" > <AiOutlineUser/> </Link> 
            <Link className="link-item" > <AiOutlineHeart/> </Link> 
            <Link className="link-item" > <AiOutlineShoppingCart/> </Link> 
-        </div>
-            <div className='icon-links-phone' >
-           <Link className="link-item" > <BiSearch/> </Link> 
-           <Link className="link-item" > <AiOutlineUser/> </Link> 
-           <Link className="link-item" > <AiOutlineHeart/> </Link> 
-           <Link className="link-item" > <AiOutlineShoppingCart/> </Link> 
-            <HiOutlineMenuAlt3 className="link-item burger-menu"  onClick={OpenOverlayMenu}  />
+            <HiOutlineMenuAlt3 className="link-item burger-menu" style={{cursor: 'pointer'}}  onClick={OpenOverlayMenu}  />
         </div>
       
     </div>  </>

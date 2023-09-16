@@ -4,6 +4,7 @@ import Button from '../Button';
 import Colors from "../ColorsFilter/Colors";
 import PriceRangeInput from "../PriceRangeInput";
 import Accordion from "../Accordion";
+import VeloProduct from "../VeloProduct/VeloProduct";
 
 import { useForm } from "react-hook-form";
 
@@ -87,7 +88,7 @@ const VeloCatalogue = () => {
       </div> </form>
 
       <div className="right-velo-catalogue">
-      
+      <VeloProduct/>
          </div>
         
     </div>
