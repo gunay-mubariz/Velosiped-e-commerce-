@@ -16,6 +16,7 @@ const Partners = () => {
       <Swiper
         spaceBetween={50}
         slidesPerView={5}
+        loop={true}
         centeredSlides={true}
         autoplay={{
           delay: 2500,

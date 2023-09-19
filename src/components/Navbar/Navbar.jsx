@@ -40,12 +40,6 @@ function CloseOv(e){
     }
 }
 
-const [showSearchInput, setShowSearchInput] = useState(false);
-
-const toggleSearchInput = () => {
-  setShowSearchInput(!showSearchInput);
-};
-
 
   return (
     <>
@@ -80,14 +74,12 @@ const toggleSearchInput = () => {
         </div>
 
     <div className='forsearch'>      <div className='icon-links' >
-           <button className="link-item" > <BiSearch onClick={toggleSearchInput} /> </button>  
+           <button className="link-item" > <BiSearch  /> </button>  
            <Link className="link-item" to='/signup' > <AiOutlineUser/> </Link> 
            <Link className="link-item" > <AiOutlineHeart /> </Link> 
            <Link className="link-item" to="/cart" > <AiOutlineShoppingCart/> </Link> 
         </div> 
-        {showSearchInput && (
-        <input type="text" placeholder="Search..." /> 
-      )}
+     
       </div>
         <div className='icon-links-phone' >
            <Link className="link-item" > <BiSearch/> </Link> 

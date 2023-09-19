@@ -8,26 +8,35 @@ import './VeloProduct.css'
 
 const VeloProduct = () => {
   
-const [products,setProducts] = useState([])
+const [velos,setVelos] = useState([])
 
 useEffect(() => {
   axios
   .get("http://localhost:5000/api/products")
-  .then((res) => setProducts(res.data))
+  .then((res) => {
+    const data = res.data;
+
+    // Filter products based on category
+    const velocycleProducts = data.filter((product) => product.category === 'velocycle');
+    
+
+    setVelos(velocycleProducts);
+  })
   .catch((err) => console.log(err));
 },[])
 
-console.log(products)
+console.log(velos)
 
 
 
 return (
   <div className='products' >
       <div className="product">
-    {products.map((product) => (
+    {velos.map((product) => (
       <Product
        
         id={product.id}
+        category={product.category}
         country={formatImgUrl(product.country)}
         stock={product.stock ? (
           <p className="in-stock">В наличии</p>

@@ -24,6 +24,9 @@ button.link-item{
    padding: 6px;
    border-radius: 8px;
    outline: none;
+   background-color: transparent;
+   color: #fff;
+   
 }
 .link-item:hover{
     color:#d75702;

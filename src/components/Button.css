@@ -9,3 +9,13 @@
     text-align: center;
     cursor: pointer;
 }
+
+.more-btn{
+    transition: background-color 0.3s ease;
+}
+.more-btn:hover{
+    color:#F57520 ;
+    background: transparent;
+    border: 1px solid #F57520;
+    font-weight: 500
+}

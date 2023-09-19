@@ -7,31 +7,49 @@ import './Accessories.css';
 
 const Accessories = () => {
   
-  const [products,setProducts] = useState([])
+  const [accessories,setAccessories] = useState([])
 
   useEffect(() => {
     axios
     .get("http://localhost:5000/api/products")
-    .then((res) => setProducts(res.data))
+    .then((res) => {
+      const data = res.data;
+
+      // Filter products based on category
+      const veloaccessoryProducts = data.filter((product) => product.category === 'accessory');
+
+      setAccessories(veloaccessoryProducts);
+    })
     .catch((err) => console.log(err));
   },[])
 
-  console.log(products)
+  console.log(accessories)
   
-  return (
-    <div className='products' >Accessories
-        <div className="product">
-      {products.map((product) => (
-        <Product
-          id={product.id}
-          price={product.price}
-          title={product.title}
-          description={product.description}
-          image={formatImgUrl(product.productImage)}
-        />
-      ))}
-    </div>
-    </div>
+  return ( 
+  <div className='accessories'>
+    <div className='products' >
+    <div className="product">
+  {accessories.map((product) => (
+    <Product
+     
+      id={product.id}
+      category={product.category}
+      country={formatImgUrl(product.country)}
+      stock={product.stock ? (
+        <p className="in-stock">В наличии</p>
+      ) : (
+        <p className="out-of-stock">Распродано</p>
+      )}
+      
+      price={product.price}
+      title={product.name}
+      image={formatImgUrl(product.productImage)}
+       /> 
+  ))}
+ 
+</div>
+</div>
+</div>
   )
 }
 

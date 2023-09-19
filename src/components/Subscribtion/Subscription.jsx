@@ -83,7 +83,7 @@ Swal.fire(
 
           <div className="form-right">
 
-          <Button text="Подписаться"  />
+          <Button className="more-btn" text="Подписаться"  />
           </div>
 
 

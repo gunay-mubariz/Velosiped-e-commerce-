@@ -14,7 +14,7 @@ const Introsection = () => {
       <div className="intro-text">
         <h2>Электро <br /> велосипеды</h2>
         <p>Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом, который устанавливает новый, очень высокий стандарт для данной категории</p>
-     <Button text="Подробнее" onClick={relocate} />
+     <Button className="more-btn"  text="Подробнее" onClick={relocate} /> 
   
     
       </div>

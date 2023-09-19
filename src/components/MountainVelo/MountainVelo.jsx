@@ -91,7 +91,7 @@ const MountainVelo = () => {
               приятной и комфортной
             </p>
           </div>
-          <Button text="Каталог" onClick={relocate} />
+          <Button className="more-btn" text="Каталог" onClick={relocate} />
         </div>
       </div>
     </div>
