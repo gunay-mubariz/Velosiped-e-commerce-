@@ -13,7 +13,7 @@ import Spam from "../../assets/images/partners/spam.png";
 const Partners = () => {
   return (
     <div className="partners">
-      <Swiper
+      <Swiper 
         spaceBetween={50}
         slidesPerView={5}
         loop={true}
@@ -25,7 +25,7 @@ const Partners = () => {
         }}
         
         breakpoints={{
-          500: {
+          375: {
             slidesPerView: 2,
             spaceBetween: 20,
           },

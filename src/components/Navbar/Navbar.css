@@ -43,7 +43,13 @@ button.link-item{
     font-weight: 300;
     text-transform: uppercase;
 }
+.quantity-navcart{
+    position: absolute;
+    color: #d75702;
+    left: 10px;
+    top: -10px;
 
+}
 
 
 
@@ -97,8 +103,8 @@ button.link-item{
 }
 .icon-links-phone{
     display: none;
-
 }
+
 
 
 
@@ -108,12 +114,15 @@ button.link-item{
         display: flex;
         flex-direction: row;
     }
-    .icon-links, .page-links{
+    .icon-links,.page-links{
         display: none;
     }
     .navbar{
          justify-content: space-between;
          padding-left: 20px;
          padding-right: 20px;
+    }
+    .forsearch{
+        display: none;
     }
 }

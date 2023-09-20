@@ -10,6 +10,7 @@ import ScrollToTopBtn from './components/ScrollToTopBtn/ScrollToTopBtn';
 import Cart from './components/ShoppingCart/Cart';
 import SignUp from './components/SignUp/SignUp';
 import SingleProduct from './components/VeloProduct/SingleProduct';
+import { CartProvider } from './CartContext';
 
 import SpareParts from './pages/SpareParts';
 import Footer from './components/Footer/Footer';
@@ -19,6 +20,7 @@ import { useLocation } from 'react-router-dom';
 function App() {
   const location = useLocation();
   return (
+    <CartProvider>
     <div className="App">
       
      <Navbar className={location.pathname === '/' ? '' : 'black'}  />
@@ -36,6 +38,7 @@ function App() {
       <ScrollToTopBtn/>
      <Footer/>
     </div>
+    </CartProvider>
   );
 }
 

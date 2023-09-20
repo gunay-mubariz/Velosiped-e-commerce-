@@ -1,4 +1,4 @@
-import React, {useRef,useState} from 'react'
+import React, {useRef,useState, useContext} from 'react'
 import './Navbar.css'
 import { Link } from "react-router-dom"
 
@@ -10,8 +10,15 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import Logo from '../../assets/images/velo-logo.png';
 
+import { CartContext } from '../../CartContext';
+
 
 const Navbar = () => {
+
+  const {cart} = useContext(CartContext);
+
+  const findTotalQuantity = cart.reduce((acc, product) => acc + product.quantity,0);
+
 
   const OverlayMenuRef = useRef()
   function OpenOverlayMenu(e){
@@ -73,14 +80,15 @@ function CloseOv(e){
             <Link className="link-item" to="/bikestations">Велостанки</Link>
         </div>
 
-    <div className='forsearch'>      <div className='icon-links' >
+    <div className='forsearch'>      
+        <div className='icon-links' >
            <button className="link-item" > <BiSearch  /> </button>  
            <Link className="link-item" to='/signup' > <AiOutlineUser/> </Link> 
            <Link className="link-item" > <AiOutlineHeart /> </Link> 
-           <Link className="link-item" to="/cart" > <AiOutlineShoppingCart/> </Link> 
+           <Link className="link-item" style={{position: 'relative', width:'26x', }}  to="/cart" > <AiOutlineShoppingCart /> <small className='quantity-navcart' >{findTotalQuantity}</small>   </Link> 
         </div> 
-     
-      </div>
+    </div>
+
         <div className='icon-links-phone' >
            <Link className="link-item" > <BiSearch/> </Link> 
            <Link className="link-item" > <AiOutlineUser/> </Link> 

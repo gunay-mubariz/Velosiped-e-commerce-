@@ -4,9 +4,9 @@ import { useState } from "react";
 import "./Product.css";
 import Button from "../Button";
 import { HiCursorClick } from "react-icons/hi";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
-export const Product = ({ id, title,country,stock, price, image, description ,category }) => {
+export const Product = ({ id, title,country,stock, price, image, description ,category,onClick }) => {
   const [isButtonVisible, setButtonVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -17,12 +17,13 @@ export const Product = ({ id, title,country,stock, price, image, description ,ca
     setButtonVisible(false);
   };
 
-  const history = useHistory()
- const relocate = (e) => {
-  e.stopPropagation()
-  e.preventDefault()
-  console.log('added')
- }
+  // const history = useHistory()
+//  const relocate = (e) => {
+//   e.stopPropagation()
+//   e.preventDefault()
+//   console.log('added')
+//  }
+
   return (
     <Link to={`/products/${id}`} className="productCard" 
     onMouseEnter={handleMouseEnter}
@@ -39,7 +40,7 @@ export const Product = ({ id, title,country,stock, price, image, description ,ca
       <h4 className="name">{title}</h4>
       <p className="price">{`Цена: ${price}$`}</p>
      
-     {isButtonVisible &&  <Button onClick={relocate}  style={{marginLeft:'6px'}}  text={<><HiCursorClick/> В 1 клик</>} /> }
+     {isButtonVisible &&  <Button  onClick={(e) => {e.stopPropagation(); e.preventDefault(); onClick()}}  style={{marginLeft:'6px'}}  text={<><HiCursorClick/> В корзину</>} /> }
     </Link>
   );
 };

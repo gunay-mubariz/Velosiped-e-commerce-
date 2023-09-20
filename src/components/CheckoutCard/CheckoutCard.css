@@ -1,0 +1,28 @@
+.checkoutCard {
+    background-color: aliceblue;
+    border-radius: 12px;
+    border: 1px solid #999;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.checkoutCard .img-container {
+    height: 100%;
+    width: 200px;
+}
+.checkoutCard .img-container img{
+    height: 100%;
+    width: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.checkoutCard .content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
