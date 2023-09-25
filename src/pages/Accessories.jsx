@@ -1,11 +1,23 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import { useEffect } from 'react'
 import axios from 'axios';
 import { Product } from '../components/Product/Product';
 import {formatImgUrl} from './utils';
 import './Accessories.css';
+import { CartContext } from '../CartContext';
+import Swal from "sweetalert2";
+
 
 const Accessories = () => {
+
+  const fault = () => {
+    
+    Swal.fire('Данного товара нет в наличии')
+     
+      };
+    
+  const {products,addToCart} = useContext(CartContext);
+
   
   const [accessories,setAccessories] = useState([])
 
@@ -44,6 +56,7 @@ const Accessories = () => {
       price={product.price}
       title={product.name}
       image={formatImgUrl(product.productImage)}
+      onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
        /> 
   ))}
  

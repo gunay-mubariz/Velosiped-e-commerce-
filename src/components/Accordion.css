@@ -36,7 +36,7 @@
     color: #fff;
     
   }
-  input,label{
+  .velo-catalogue input[type=checkbox],label{
     cursor: pointer;
     margin-bottom: 20px;
 

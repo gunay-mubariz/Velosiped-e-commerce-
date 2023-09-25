@@ -1,24 +1,36 @@
-import React from "react";
+import React,{useState} from "react";
 import "./VeloCatalogue.css";
 import Button from '../Button';
 import Colors from "../ColorsFilter/Colors";
-import PriceRangeInput from "../PriceRangeInput";
 import Accordion from "../Accordion";
 import VeloProduct from "../VeloProduct/VeloProduct";
+
+import ReactSlider from 'react-slider'
 
 import { useForm } from "react-hook-form";
 
 const VeloCatalogue = () => {
 
- 
   const {  handleSubmit,register,reset } = useForm({
     mode: "onSubmit",
   });
 
+  const defaultSliderValue = [0, 2000];
+  const [sliderValue, setSliderValue] = useState(defaultSliderValue);
+  const handleSliderChange = (value) => {
+    setSliderValue(value);
+  };
+  const resetSliderValues = () => {
+    setSliderValue(defaultSliderValue); 
+  };
+
+ 
+
   
   const onSubmit = (data) => {
-    console.log("filter:", data); // Log the form data when the form is submitted
-    reset()
+    console.log("filter:", data); 
+    reset();
+    resetSliderValues();
   };
     
 
@@ -50,9 +62,22 @@ const VeloCatalogue = () => {
         <input type="checkbox" id="vehicle5" {...register("vehicle5")} value="Boat"/>
         <label htmlFor="vehicle5"> Двухподвесные велосипеды</label><br/></>}
       />
-      <Accordion
+      <Accordion 
         title="Цена"
-        content={<><PriceRangeInput/></>}
+        content={   <ReactSlider
+        onChange={handleSliderChange}
+          className="horizontal-slider"
+          thumbClassName="example-thumb"
+          trackClassName="example-track"
+          value={sliderValue}
+          min={200}
+          max={2000}
+          ariaLabel={['Lower thumb', 'Upper thumb']}
+          ariaValuetext={state => `Thumb value ${state.valueNow}`}
+          renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+          pearling
+          minDistance={100}
+      />}
       />
       <Accordion
         title="Бренд"
@@ -85,7 +110,8 @@ const VeloCatalogue = () => {
       /> 
 
        <div style={{display:'flex', justifyContent:'center'}}> <Button text="Сбросить фильтры" style={{backgroundColor: 'transparent',color: '#000', border: '1px solid #E5E5E5' }}/> </div>
-      </div> </form>
+      </div>
+      </form>
 
       <div className="right-velo-catalogue">
       <VeloProduct/>

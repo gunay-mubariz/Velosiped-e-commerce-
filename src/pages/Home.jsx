@@ -12,6 +12,7 @@ const Home = () => {
         <Introsection/>
         <Partners/>
         <MountainVelo/>
+        <h2 style={{padding:"50px 100px 10px 100px"}}>НОВИНКИ</h2>
         <Slider  />
         <Catalogue/>
         <Subscription/>

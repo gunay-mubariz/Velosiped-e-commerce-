@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 import 'swiper/swiper-bundle.css';
 import  { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,10 +6,20 @@ import { formatImgUrl } from '../../pages/utils';
 import { Product } from '../Product/Product';
 import axios from 'axios';
 import './VeloSlider.css'
+import { CartContext } from '../../CartContext';
+import Swal from "sweetalert2";
 
 const Slider = () => {
+  const fault = () => {
+    
+    Swal.fire('Данного товара нет в наличии')
+     
+      };
+    
+  const {products,addToCart} = useContext(CartContext);
 
-    const [products,setProducts] = useState([])
+
+    const [slideproducts,setProducts] = useState([])
 
 useEffect(() => {
   axios
@@ -47,7 +57,7 @@ useEffect(() => {
 
       modules={[Autoplay]}
     >
-      {products.map((product) => (
+      {slideproducts.map((product) => (
         <SwiperSlide key={product.id}>
           <Product
             id={product.id}
@@ -60,6 +70,7 @@ useEffect(() => {
             price={product.price}
             title={product.name}
             image={formatImgUrl(product.productImage)}
+            onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
           />
         </SwiperSlide>
       ))}

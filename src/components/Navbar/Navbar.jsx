@@ -66,7 +66,7 @@ function CloseOv(e){
 
 
 
-    <div className='navbar black' >
+    <div className='navbar black ' >
         <div className="logo">
             <img src={Logo} alt="" />
         </div>

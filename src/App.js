@@ -23,7 +23,7 @@ function App() {
     <CartProvider>
     <div className="App">
       
-     <Navbar className={location.pathname === '/' ? '' : 'black'}  />
+     <Navbar className={location.pathname === '/' ? '' : 'sticky black '}  />
         <Switch>
           <Route exact path="/" component={Home}  />
           <Route exact path="/velos" component={Velos}  />

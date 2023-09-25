@@ -1,28 +1,52 @@
 .checkoutCard {
-    background-color: aliceblue;
-    border-radius: 12px;
-    border: 1px solid #999;
+    /* background-color: green; */
+    border-bottom: 2px solid #E5E5E5;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .checkoutCard .img-container {
     height: 100%;
-    width: 200px;
+    width: 240px;
 }
 .checkoutCard .img-container img{
     height: 100%;
-    width: 200px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    width: 240px;
+    object-fit: contain;
 }
 
 .checkoutCard .content {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+.content h4{
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: pre-line; 
+    max-width: 220px;
+}
+.content h5{
+    color: #777;
+}
+.btn-delete{
+    cursor: pointer;
+    margin-left: 50px;
+    color: red;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 24px;
+}
+@media (min-width:370px) and (max-width:768px){
+    .checkoutCard{
+        flex-direction: column;
+        border: none;
+        height: max-content;
+    }
 }

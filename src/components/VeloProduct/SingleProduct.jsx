@@ -1,11 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import "./SingleProduct.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { formatImgUrl } from "../../pages/utils";
 import Button from "../Button";
+import Swal from "sweetalert2";
+
+import { CartContext } from "../../CartContext";
 
 const SingleProduct = () => {
+
+  const fault = () => {
+    
+    Swal.fire('Данного товара нет в наличии')
+     
+      };
+    
+  const {products,addToCart} = useContext(CartContext);
+
+
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -41,7 +54,8 @@ const SingleProduct = () => {
         )}
         <h4 className="single-price">{product?.price} $</h4>
         <p className="single-des">{product?.details}</p>
-        <Button className="more-btn"  text="В корзину" />
+        <Button className="more-btn"  text="В корзину"         onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
+ />
       </div>
     </div>
   );
