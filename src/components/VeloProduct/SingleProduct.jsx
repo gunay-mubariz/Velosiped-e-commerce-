@@ -5,10 +5,15 @@ import { useParams } from "react-router-dom";
 import { formatImgUrl } from "../../pages/utils";
 import Button from "../Button";
 import Swal from "sweetalert2";
+import { ToastContainer } from "react-toastify";
+import { notify } from "../notify";
 
 import { CartContext } from "../../CartContext";
 
 const SingleProduct = () => {
+
+
+
 
   const fault = () => {
     
@@ -54,8 +59,9 @@ const SingleProduct = () => {
         )}
         <h4 className="single-price">{product?.price} $</h4>
         <p className="single-des">{product?.details}</p>
-        <Button className="more-btn"  text="В корзину"         onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
+        <Button className="more-btn"  text="В корзину"   onClick={() => {if(product.stock){addToCart(product.id); notify()} else{fault()} } }
  />
+ <ToastContainer/>
       </div>
     </div>
   );

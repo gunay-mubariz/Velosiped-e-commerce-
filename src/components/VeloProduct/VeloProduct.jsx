@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Product } from '../Product/Product';
 import {formatImgUrl} from '../../pages/utils';
 import Swal from "sweetalert2";
+import { ToastContainer } from 'react-toastify';
+import { notify } from '../notify';
 
 import { CartContext } from '../../CartContext';
 
@@ -60,10 +62,10 @@ return (
         price={product.price}
         title={product.name}
         image={formatImgUrl(product.productImage)}
-        onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
+        onClick={() => {if(product.stock){addToCart(product.id);notify()} else{fault()} } }
          /> 
     ))}
-   
+   <ToastContainer className="notification" />
   </div>
   </div>
 )

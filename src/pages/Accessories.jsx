@@ -6,7 +6,8 @@ import {formatImgUrl} from './utils';
 import './Accessories.css';
 import { CartContext } from '../CartContext';
 import Swal from "sweetalert2";
-
+import { ToastContainer } from 'react-toastify';
+import { notify } from '../components/notify';
 
 const Accessories = () => {
 
@@ -56,10 +57,10 @@ const Accessories = () => {
       price={product.price}
       title={product.name}
       image={formatImgUrl(product.productImage)}
-      onClick={() => {if(product.stock){addToCart(product.id)} else{fault()} } }
+      onClick={() => {if(product.stock){addToCart(product.id);notify()} else{fault()} } }
        /> 
   ))}
- 
+ <ToastContainer/>
 </div>
 </div>
 </div>

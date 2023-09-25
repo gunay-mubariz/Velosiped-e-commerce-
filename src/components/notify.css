@@ -1,0 +1,7 @@
+.Toastify__toast-body{
+    color: #F57520;
+}
+
+div[role=progressbar]{
+    background-color: #F57520;
+}
