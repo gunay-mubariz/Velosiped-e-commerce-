@@ -54,13 +54,12 @@ function CloseOv(e){
        <RxCross2   className='cross-icon' onClick={CloseOverlayMenu}/>
         
         <div className="nav-links">
-           <Link className="link-item ov" to="/" onClick={CloseOv} >Главная </Link>
+            <Link className="link-item ov" to="/" onClick={CloseOv} >Главная </Link>
             <Link className="link-item ov" to="/velos" onClick={CloseOv}>Велосипеды</Link>
             <Link className="link-item ov" to="/accessories" onClick={CloseOv}>Аксессуары</Link>
             <Link className="link-item ov" to="/equipment" onClick={CloseOv}>Экипировка</Link>
             <Link className="link-item ov" to="/spareparts" onClick={CloseOv}>Запчасти</Link>
             <Link className="link-item ov" to="/bikestations" onClick={CloseOv}>Велостанки</Link>
-           
         </div>
     </div>
 
@@ -93,7 +92,7 @@ function CloseOv(e){
            <Link className="link-item" > <BiSearch/> </Link> 
            <Link className="link-item" > <AiOutlineUser/> </Link> 
            <Link className="link-item" > <AiOutlineHeart/> </Link> 
-           <Link className="link-item" > <AiOutlineShoppingCart/> </Link> 
+           <Link className="link-item" to="/cart" > <AiOutlineShoppingCart/> </Link> 
             <HiOutlineMenuAlt3 className="link-item burger-menu" style={{cursor: 'pointer'}}  onClick={OpenOverlayMenu}  />
         </div>
       

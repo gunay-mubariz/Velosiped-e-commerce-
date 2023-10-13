@@ -13,7 +13,7 @@ const CheckoutForm = () => {
         mode: "onChange",
         defaultValues: {
           email: "",
-          subscribe: false,
+          firstName: "",
         },
       });
 
@@ -40,7 +40,8 @@ const CheckoutForm = () => {
   return (
     <div>
         <form  onSubmit={handleSubmit(onSubmit)} >
-        <div> <input
+        <div> 
+          <input
             className="checkout-input"
             {...register("email", {
               pattern: {
@@ -54,9 +55,29 @@ const CheckoutForm = () => {
             
             })}
             placeholder="E-mail"
-          />     {
-            formState.errors.email&& <div><small className="error">{formState.errors.email.message}</small></div>
-          }  </div>
+          /> 
+         { formState.errors.email&& <div><small className="error">{formState.errors.email.message}</small></div>} 
+
+         <input {...register("firstName", {  
+              required:{
+                value:true,
+                message:'Firstname is required'
+              } ,
+              pattern: {
+                value:  /^[A-Za-z]+$/i,
+                message: "Firstname is invalid"
+              },
+              maxLength: {
+                value: 20,
+                message: 'Firstname should not exceed 20 characters'
+              }
+              
+              })} />
+         { formState.errors.firstName&& <div><small className="error">{formState.errors.firstName.message}</small></div>}  
+        </div>
+        
+
+
           <Button text="Подписаться"  />
         </form>
     </div>

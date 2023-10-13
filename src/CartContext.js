@@ -6,6 +6,7 @@ export const CartContext = createContext();
 export const CartProvider = ({children}) => {
 
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         axios
@@ -14,7 +15,6 @@ export const CartProvider = ({children}) => {
           .catch((err) => console.log(err));
       }, []);
       
-    const [cart, setCart] = useState([]);
    
     const clearCart = () =>{
       setCart([])
@@ -43,7 +43,7 @@ export const CartProvider = ({children}) => {
       };
     
       return (
-        <CartContext.Provider value={{ products, cart, addToCart, removeFromCart,clearCart }}>
+        <CartContext.Provider value={{ products, cart, addToCart, removeFromCart,clearCart,setCart }}>
           {children}
         </CartContext.Provider>
       );

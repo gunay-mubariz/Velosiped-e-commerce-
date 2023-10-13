@@ -7,7 +7,7 @@ import Slider from '../VeloSlider/VeloSlider';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart,addToCart ,setCart } = useContext(CartContext);
 
   if(cart.length === 0) {
     return (
@@ -20,6 +20,31 @@ const Cart = () => {
        
     )
   }
+
+  const handleIncrease = (productId) => {
+    addToCart(productId);
+  };
+
+
+
+  const handleRemoveOne = (productId) => {
+    const updatedCart = [...cart];
+
+    const productIndex = updatedCart.findIndex(
+      (product) => product.id === productId
+    );
+
+    if (productIndex !== -1) {
+      if (updatedCart[productIndex].quantity > 1) {
+        updatedCart[productIndex].quantity -= 1;
+      } else {
+        updatedCart.splice(productIndex, 1);
+      }
+
+      setCart(updatedCart);
+    }
+  };
+
 
   const findTotalPrice = cart.reduce((acc, product) => acc + (product.price * product.quantity), 0);
 
@@ -38,6 +63,9 @@ const Cart = () => {
           image={formatImgUrl(product.productImage)}
           quantity={product.quantity}
           onClick={() => removeFromCart(product.id)}
+          onIncrease={() => handleIncrease(product.id)}
+          onDecrease={() => handleRemoveOne(product.id)}
+
           />
           ))}
       </div>
