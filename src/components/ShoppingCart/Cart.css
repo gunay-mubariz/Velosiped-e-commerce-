@@ -7,13 +7,19 @@
 }
 .cart{
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 .total-text{
-    width: 300px;
+    padding-bottom: 10px;
     display: flex;
-    justify-content: space-around;
+    gap: 10px;
+    /* justify-content: space-between; */
 }
+.cart-checkout{
+    align-self: self-end;
+}
+
+
 
 @media (min-width:370px) and (max-width:768px){
 .cart{

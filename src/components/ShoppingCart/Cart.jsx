@@ -71,9 +71,9 @@ const Cart = () => {
       </div>
 
       <div className="cart-checkout">
-          <div className='total-text'> <h3>Итого</h3>{findTotalPrice} $</div>
+          <div className='total-text'> <h3>Итого : </h3> <p style={{fontSize:"18px"}}>{findTotalPrice} $</p></div>
           <div className="checkout-form">
-            <CheckoutForm/>
+            <CheckoutForm className="admit"/>
           </div>
       </div>
 

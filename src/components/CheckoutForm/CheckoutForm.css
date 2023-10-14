@@ -1,0 +1,22 @@
+
+
+/* .checkout-sec>form{
+    padding-left: 40px;
+} */
+
+
+.error{
+    color: red;
+}
+
+.confirm-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.confirm-inputs>input{
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #7c7c7c;
+}

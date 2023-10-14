@@ -38,9 +38,9 @@ const CheckoutForm = () => {
           };
 
   return (
-    <div>
+    <div className='checkout-sec'>
         <form  onSubmit={handleSubmit(onSubmit)} >
-        <div> 
+        <div className='confirm-inputs'>  
           <input
             className="checkout-input"
             {...register("email", {
@@ -72,13 +72,50 @@ const CheckoutForm = () => {
                 message: 'Firstname should not exceed 20 characters'
               }
               
-              })} />
-         { formState.errors.firstName&& <div><small className="error">{formState.errors.firstName.message}</small></div>}  
+              })} placeholder="First name" />
+         { formState.errors.firstName&& <div><small className="error">{formState.errors.firstName.message}</small></div>} 
+
+          <input {...register("lastName", {  
+              required:{
+                value:true,
+                message:'Last name is required'
+              } ,
+              pattern: {
+                value:  /^[A-Za-z]+$/i,
+                message: "Last name is invalid"
+              },
+              maxLength: {
+                value: 20,
+                message: 'Last name should not exceed 20 characters'
+              }
+              
+              })} placeholder="Last name" />
+         { formState.errors.lastName&& <div><small className="error">{formState.errors.lastName.message}</small></div>}  
+
+
+         <input {...register("address", {
+             
+              required:{
+                value:true,
+                message:'Address is required'
+              } ,
+              pattern: {
+                value:  /^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/,  //20 Alameda  Avenue , Lakewood, CO 80222
+                message: "Address is invalid"
+              },
+              maxLength: {
+                value: 50,
+                message: 'Address should not exceed 50 characters'
+              }
+              
+              })} placeholder="Address" />
+         { formState.errors.address&& <div><small className="error">{formState.errors.address.message}</small></div>}  
         </div>
+        
         
 
 
-          <Button text="Подписаться"  />
+          <Button style={{marginTop:"10px"}} text="Заказать" className="more-btn" />
         </form>
     </div>
   )
