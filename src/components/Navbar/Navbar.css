@@ -127,3 +127,10 @@ button.link-item{
         display: none;
     }
 }
+
+@media (min-width:820px) and (max-width:900px){
+    .page-links>.link-item:nth-child(even) {
+        display: none;
+    }
+ 
+}
